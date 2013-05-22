@@ -1,12 +1,13 @@
 #!/usr/bin/env python3.3
 import random
 import datetime
+import sys
 
 how_many_grammars = 11
 terminals_bound = 15
-nonterminals_bound = 15
-production_number_bound = 30
-max_prod_length = 20
+nonterminals_bound = 10
+production_number_bound = 5
+max_prod_length = 5
 
 TERMINALS = 'abcdefghijklmnopqrstuvwxyz'
 NONTERMINALS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
@@ -87,7 +88,7 @@ class Grammar:
 def main():
     random.seed(datetime.datetime.utcnow())
     x = Grammar()
-    print(x)
+    print(x, file=sys.stderr)
     print(x.string_for_prolog())
 
 
