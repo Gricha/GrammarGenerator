@@ -4,13 +4,13 @@ import datetime
 import sys
 
 how_many_grammars = 11
-terminals_bound = 15
+terminals_bound = 5
 nonterminals_bound = 10
-production_number_bound = 5
+production_number_bound = 4
 max_prod_length = 5
 
 TERMINALS = 'abcdefghijklmnopqrstuvwxyz'
-NONTERMINALS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+NONTERMINALS = 'ABCDEFGHIJKLMNOPQRSTUVWXY'
 
 
 def remove_duplicates(seq):
@@ -36,7 +36,7 @@ class Grammar:
     def generate_productions(self):
         for nt in self.nonterminals:
             self.productions[nt] = []
-            for i in range(1, random.randint(1, production_number_bound)):
+            for i in range(0, random.randint(1, production_number_bound)):
                 self.productions[nt].append(self.generate_production())
         self.remove_duplicates_from_productions()
 
